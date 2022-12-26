@@ -23,9 +23,9 @@ python list_dataset_file.py
 训练一个口罩检测模型，需要修改"data/mask.yaml"里面的train.txt和valid.txt的路径。训练脚本如下所示：
 ```python
 python train.py --data mask.yaml --cfg yolov5s.yaml --weights "" --batch-size 64
-                                                                  yolov5m                                                  40
-                                                                  yolov5l                                                    24
-                                                                  yolov5x                                                   16
+                                       yolov5m                                40
+                                       yolov5l                                24
+                                       yolov5x                                16
 ```
 训练完成后会在
 
@@ -35,7 +35,7 @@ python train.py --data mask.yaml --cfg yolov5s.yaml --weights "" --batch-size 64
 python detect.py --source data/images --weights ./runs/train/exp/weights/best.pt --conf 0.5
 ```
 测试结果会在"runs/detect"生成：
-![ca82a62c5e0064b976f82ac4a9786220.jpeg](en-resource://database/516:0)
+<img src="result.jpg">
 
 
 ## 模型导出
