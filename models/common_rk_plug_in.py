@@ -5,26 +5,6 @@ import torch.nn as nn
 from models.common import Conv
 
 
-class surrogate_silu(nn.Module):
-    """docstring for surrogate_silu"""
-    def __init__(self):
-        super(surrogate_silu, self).__init__()
-        self.act = nn.Sigmoid()
-
-    def forward(self, x):
-        return x*self.act(x)
-
-
-class surrogate_hardswish(nn.Module):
-    """docstring for surrogate_hardswish"""
-    def __init__(self):
-        super(surrogate_hardswish, self).__init__()
-        self.relu6 = nn.ReLU()
-
-    def forward(self, x):
-        return x *(self.relu6(torch.add(x, 3))/6)
-
-
 class surrogate_focus(nn.Module):
     # surrogate_focus wh information into c-space
     def __init__(self, c1, c2, k=1, s=1, p=None, g=1, act=True):  # ch_in, ch_out, kernel, stride, padding, groups
@@ -65,7 +45,7 @@ class preprocess_conv_layer(nn.Module):
     #   input_module 为输入模型，即为想要导出模型
     #   mean_value 的值可以是 [m1, m2, m3] 或 常数m
     #   std_value 的值可以是 [s1, s2, s3] 或 常数s
-    #   BGR2RGB的操作默认为首先执行，既替代的原有操作顺序为 
+    #   BGR2RGB的操作默认为首先执行，既替代的原有操作顺序为
     #       BGR2RGB -> minus mean -> minus std (与rknn config 设置保持一致) -> nhwc2nchw
     #
     #   使用示例-伪代码：
