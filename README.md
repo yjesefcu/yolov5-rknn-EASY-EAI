@@ -35,7 +35,7 @@ python train.py --data mask.yaml --cfg yolov5s.yaml --weights "" --batch-size 64
 python detect.py --source data/images --weights ./runs/train/exp/weights/best.pt --conf 0.5
 ```
 测试结果会在"runs/detect"生成：
-<img src="./photo/result.jpg">
+<img src="./photo/image.jpg">
 
 
 ## 模型导出
