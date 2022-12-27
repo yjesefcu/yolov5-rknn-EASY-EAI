@@ -11,7 +11,7 @@ pytorch version >= 1.7
 onnx verison >= 1.11
 
 ## 准备数据
-口罩检测数据百度链接：https://pan.baidu.com/s/1anEZPVTBVoJp_gbP7LGYsw 提取码：6666 
+口罩检测数据百度链接：https://pan.baidu.com/s/1vtxWurn1Mqu-wJ017eaQrw 提取码：6666 
 
 数据集解压后(脚本在数据集里面)，执行以下脚本生成train.txt和valid.txt：
 ```python
